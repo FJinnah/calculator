@@ -24,7 +24,14 @@
 
 .small-buttons {
   border: 2px solid red;
-  display: flex;
-  flex-direction: column ;
-  flex-wrap: wrap;
+  /* display: flex; */
+  /* flex-direction: column ; */
+  /* flex-wrap: wrap; */ */
+}
+
+.row-1,
+.row-2,
+.row-3,
+.row-4 {
+  display: flex
 }
