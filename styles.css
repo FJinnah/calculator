@@ -2,35 +2,50 @@
   border: 3px solid black;
   background-color: lightgray;
   padding: 10px;
-  height: 550px;
-  width: 350px;
+  height: 450px;
+  width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  align-content: space-between;
+  justify-content: space-around;
+}
+
+.screen-container {
+  border: 2px solid orange;
+  width: 100%;
+  height: auto;
+  display: flex;
 }
 
 #screen {
   border: 2px solid blue;
-  flex-direction: row;
+  width: 400px;
+  height: 100px;
+  margin: 5px;
+}
 
+.large-buttons {
+  border: 2px solid aqua;
+  width: 100%;
+  height: auto;
+  display: flex;
 }
 
 #clear,
 #delete {
   border: 3px solid black;
-}
-
-.large-buttons {
-  display: flex;
+  width: 200px;
+  height: 50px;
+  margin: 5px;
 }
 
 .button-grid {
   border: 2px solid red;
-  width: 150px;
-  height: 200px;
-  /* display: flex;  */
-  /* flex-direction: column; */
+  width: 100%;
+  height: auto;
+  display: flex; 
+  flex-direction: column;
+  justify-content: space-around;
   /* flex-wrap: wrap; */
 }
 
@@ -39,6 +54,16 @@
 .row-3,
 .row-4 {
   display: flex;
-  /* justify-content: space-between; */
-  
+  justify-content: space-around; 
+}
+
+.small-buttons {
+  border: 2px solid green;
+  width:100px;
+  height: 50px;
+  margin: 5px;
+
+  /* display: flex;
+  justify-content: space-around;
+  flex-grow: 1; */
 }
