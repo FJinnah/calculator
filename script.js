@@ -21,3 +21,6 @@ const operate = function(operator, num1, num2) {
     return divide(num1,num2);
   }
 }
+const screenView = document.querySelector("#screen");
+const oneButton = document.querySelector("#one");
+let displayValue = oneButton.addEventListener('click',() => {screenView.innerText = parseInt("1");});
