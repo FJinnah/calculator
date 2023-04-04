@@ -16,7 +16,11 @@ const divideButton = document.querySelector("#divide");
 const decimalButton = document.querySelector("#decimal");
 const equalsButton = document.querySelector("#equals");
 
+//Variable names for classes
+const numButton = document.querySelector(".number");
+const operatorButton = document.querySelector(".operator");
 
+//Functions for operations
 const add = (num1, num2) => 
   num1 + num2;
 
@@ -42,4 +46,5 @@ const operate = function(operator, num1, num2) {
 }
 const screenView = document.querySelector("#screen");
 
-//Buttons create a string (innertext)
+//Buttons create a string (innertext), convert string to number using parseINT
+console.log(parseInt(threeButton.innerText));
