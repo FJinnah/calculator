@@ -1,3 +1,22 @@
+//Variable names for buttons
+const oneButton = document.querySelector("#one");
+const twoButton = document.querySelector("#two");
+const threeButton = document.querySelector("#three");
+const fourButton = document.querySelector("#four");
+const fiveButton = document.querySelector("#five");
+const sixButton = document.querySelector("#six");
+const sevenButton = document.querySelector("#seven");
+const eightButton = document.querySelector("#eight");
+const nineButton = document.querySelector("#nine");
+const zeroButton = document.querySelector("#zero");
+const addButton = document.querySelector("#add");
+const subtractButton = document.querySelector("#subtract");
+const multiplyButton = document.querySelector("#multiply");
+const divideButton = document.querySelector("#divide");
+const decimalButton = document.querySelector("#decimal");
+const equalsButton = document.querySelector("#equals");
+
+
 const add = (num1, num2) => 
   num1 + num2;
 
@@ -22,5 +41,5 @@ const operate = function(operator, num1, num2) {
   }
 }
 const screenView = document.querySelector("#screen");
-const oneButton = document.querySelector("#one");
-let displayValue = oneButton.addEventListener('click',() => {screenView.innerText = parseInt("1");});
+
+//Buttons create a string (innertext)
