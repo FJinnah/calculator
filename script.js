@@ -18,6 +18,7 @@ const equalsButton = document.querySelector("#equals");
 
 //Variable names for classes
 const numButton = document.querySelector(".number");
+const allButtons = document.querySelectorAll(".number");
 const operatorButton = document.querySelector(".operator");
 
 //Functions for operations
@@ -46,5 +47,12 @@ const operate = function(operator, num1, num2) {
 }
 const screenView = document.querySelector("#screen");
 
-//Buttons create a string (innertext), convert string to number using parseINT
-console.log(parseInt(threeButton.innerText));
+//Function to display number on screen when clicked
+// (parseInt(threeButton.innerText));
+allButtons.forEach((numButton) => {
+  numButton.addEventListener('click', () => {
+    newScreen = document.createElement('div');
+    newScreen.textContent = (parseInt(numButton.innerText));
+    screenView.appendChild(newScreen);
+  });
+});
