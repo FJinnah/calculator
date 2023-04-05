@@ -1,3 +1,8 @@
+//Variables to store data
+currentValue = '';
+previousValue = '';
+operator = '';
+
 //Variable names for buttons
 const oneButton = document.querySelector("#one");
 const twoButton = document.querySelector("#two");
@@ -15,6 +20,9 @@ const multiplyButton = document.querySelector("#multiply");
 const divideButton = document.querySelector("#divide");
 const decimalButton = document.querySelector("#decimal");
 const equalsButton = document.querySelector("#equals");
+const clearButton = document.querySelector("#clear");
+const deleteButton = document.querySelector("#clear");
+const screenView = document.querySelector("#screen");
 
 //Variable names for classes
 const numButton = document.querySelector(".number");
@@ -45,14 +53,29 @@ const operate = function(operator, num1, num2) {
     return divide(num1,num2);
   }
 }
-const screenView = document.querySelector("#screen");
 
 //Function to display number on screen when clicked
-// (parseInt(threeButton.innerText));
 allButtons.forEach((numButton) => {
-  numButton.addEventListener('click', () => {
-    newScreen = document.createElement('div');
-    newScreen.textContent = (parseInt(numButton.innerText));
-    screenView.appendChild(newScreen);
-  });
+  numButton.addEventListener('click', function(e){
+    handleNumber(e.target.textContent);
+    screenView.textContent = currentValue; 
+    
+    // screenView.textContent = (parseInt(numButton.innerText));
+
+    // newScreen = document.createElement('div');
+    // newScreen.textContent = (parseInt(numButton.innerText));
+    // screenView.appendChild(newScreen);
+  // });
+})
 });
+
+function handleNumber(num){
+  currentValue += num;
+}
+
+//Function to clear display of all numbers
+  clearButton.addEventListener('click', () => {
+    clearScreen = document.createElement('div');
+    clearScreen.textContent = parseInt(0);
+    screenView.removeChild(newScreen);
+  });
