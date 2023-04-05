@@ -70,8 +70,10 @@ allButtons.forEach((numButton) => {
 });
 
 function handleNumber(num){
-  currentValue += num;
-}
+  if (currentValue.length <= 7) {
+    currentValue += num;
+  }
+  };
 
 //Function to clear display of all numbers
   clearButton.addEventListener('click', () => {
