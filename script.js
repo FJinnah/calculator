@@ -1,7 +1,7 @@
 //Variables to store data
-currentValue = '';
-previousValue = '';
-operator = '';
+let currentValue = '';
+let previousValue = '';
+let operator = '';
 
 //Variable names for buttons
 const oneButton = document.querySelector("#one");
@@ -28,6 +28,7 @@ const screenView = document.querySelector("#screen");
 const numButton = document.querySelector(".number");
 const allButtons = document.querySelectorAll(".number");
 const operatorButton = document.querySelector(".operator");
+const allOperatorButtons = document.querySelectorAll(".operator");
 
 //Functions for operations
 const add = (num1, num2) => 
@@ -59,21 +60,30 @@ allButtons.forEach((numButton) => {
   numButton.addEventListener('click', function(e){
     handleNumber(e.target.textContent);
     screenView.textContent = currentValue; 
-    
-    // screenView.textContent = (parseInt(numButton.innerText));
-
-    // newScreen = document.createElement('div');
-    // newScreen.textContent = (parseInt(numButton.innerText));
-    // screenView.appendChild(newScreen);
-  // });
 })
 });
 
+//Function to store numbers in variable
 function handleNumber(num){
   if (currentValue.length <= 7) {
     currentValue += num;
   }
   };
+
+//Function to store operator in variable
+allOperatorButtons.forEach((operatorButton) => {
+  operatorButton.addEventListener('click', function(e){
+    handleOperator(e.target.textContent);
+    // screenView.textContent = currentValue; 
+})
+});
+
+//Function to store operator in variable
+function handleOperator(op) {
+  operator = op;
+  previousValue = currentValue;
+  currentValue = '';
+}
 
 //Function to clear display of all numbers
   clearButton.addEventListener('click', () => {
