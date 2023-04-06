@@ -31,28 +31,33 @@ const operatorButton = document.querySelector(".operator");
 const allOperatorButtons = document.querySelectorAll(".operator");
 
 //Functions for operations
-const add = (num1, num2) => 
-  num1 + num2;
+// const add = (num1, num2) => 
+//   num1 + num2;
 
-const subtract = (num1, num2) =>
-  num1 - num2;
+// const subtract = (num1, num2) =>
+//   num1 - num2;
 
-const multiply = (num1, num2) =>
-  num1 * num2;
+// const multiply = (num1, num2) =>
+//   num1 * num2;
 
-const divide = (num1, num2) =>
-  num1 / num2;
+// const divide = (num1, num2) =>
+//   num1 / num2;
 
-const operate = function(operator, num1, num2) {
+const operate = function() {
+  previousValue = Number(previousValue);
+  currentValue = Number(currentValue);
+  
   if (operator === '+') {
-    return add(num1, num2);
+    previousValue += currentValue;
   } else if (operator === '-') {
-    return subtract(num1, num2);
-  } else if (operator === '*') {
-    return multiply(num1,num2);
-  } else if (operator === '/') {
-    return divide(num1,num2);
+    previousValue -= currentValue;
+  } else if (operator === 'x') {
+    previousValue *= currentValue;
+  } else if (operator === '÷') {
+    previousValue /= currentValue;
   }
+  previousValue.toString;
+  currentValue.toString; 
 }
 
 //Function to display number on screen when clicked
@@ -87,7 +92,21 @@ function handleOperator(op) {
 
 //Function to clear display of all numbers
   clearButton.addEventListener('click', () => {
-    clearScreen = document.createElement('div');
-    clearScreen.textContent = parseInt(0);
-    screenView.removeChild(newScreen);
+    currentValue = '';
+    previousValue = '';
+    operator = '';
+    screenView.textContent = currentValue;
   });
+
+//Equal button functionality
+equalsButton.addEventListener('click', () => {
+  operate();
+  screenView.textContent = previousValue;
+})
+
+//Decimal functionality
+// function addDecimal() {
+//   if(!currentValue.includes(".")){
+//     currentValue += '.';
+//   }
+// } 
